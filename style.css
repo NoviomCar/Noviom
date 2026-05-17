@@ -1,0 +1,433 @@
+/* RESET & CORES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
+}
+
+:root {
+    --bg-dark: #08080a;
+    --carbon-gray: #121215;
+    --metal-silver: #d1d5db;
+    --text-light: #ffffff;
+    --text-muted: #8a8a93;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* NAVIGATION */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(8, 8, 10, 0.9);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo-container img {
+    height: 45px;
+    display: block;
+}
+
+nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 35px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--text-light);
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(8, 8, 10, 0.4), var(--bg-dark)), 
+                url(logo.jfif) no-repeat center center/cover;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: 16px;
+    color: var(--text-muted);
+    letter-spacing: 4px;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+}
+
+.btn-metal {
+    display: inline-block;
+    padding: 15px 40px;
+    border: 1px solid var(--metal-silver);
+    color: var(--text-light);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    transition: all 0.4s ease;
+}
+
+.btn-metal:hover {
+    background-color: var(--text-light);
+    color: #000;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+/* CAR LINKS & CARDS */
+.car-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.collection {
+    padding: 120px 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    text-align: center;
+    margin-bottom: 70px;
+    text-transform: uppercase;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.car-card {
+    background-color: var(--carbon-gray);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+    text-align: left; /* Linksbündig laut Vorlage */
+}
+
+.car-card-link:hover .car-card {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.car-img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.car-info {
+    padding: 30px;
+}
+
+.car-info h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.car-info p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    height: 70px; /* Hält Boxen auf gleicher Höhe */
+}
+
+.car-specs {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 20px;
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.car-specs span strong {
+    color: var(--text-light);
+    display: block;
+    font-size: 16px;
+    margin-top: 6px;
+    font-weight: 700;
+}
+
+/* STRUKTUR FÜR DIE EINZELSEITEN */
+.detail-page {
+    padding-top: 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.back-btn:hover {
+    color: var(--text-light);
+}
+
+.detail-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.detail-img {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-info h1 {
+    font-size: 42px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* FOOTER */
+footer {
+    background-color: #040405;
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    color: var(--text-muted);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+    .detail-wrapper {
+        grid-template-columns: 1fr;
+    }
+    header { padding: 20px; flex-direction: column; gap: 20px; }
+    nav a { margin: 0 12px; font-size: 11px; }
+    .hero h1 { font-size: 36px; }
+    .collection { padding: 70px 20px; }
+}
+/* DESIGN FÜR TECHNISCHE DATENBLÄTTER (EINZELSEITEN) */
+.specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.specs-table tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.specs-table td {
+    padding: 12px 0;
+    vertical-align: top;
+}
+
+.specs-table td:first-child {
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    width: 40%;
+}
+
+.specs-table td:last-child {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.performance-badge-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.perf-badge {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.perf-badge span {
+    display: block;
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.perf-badge strong {
+    font-size: 20px;
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+.price-tag {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+.price-tag span {
+    font-size: 12px;
+    color: var(--text-muted);
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+/* DESIGN FÜR DEN INTERAKTIVEN KONFIGURATOR */
+.configurator-section {
+    margin-top: 30px;
+}
+
+.config-group {
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 20px;
+}
+
+.config-group h3 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+/* Option Cards */
+.option-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.option-label:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* Verstecke den echten Radio/Checkbox, nutze die Card als Button */
+.option-input {
+    display: none;
+}
+
+.option-input:checked + .option-label {
+    border-color: var(--text-light);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.option-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.option-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.option-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.option-price {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+/* Live-Preisbox */
+.live-price-container {
+    background: var(--carbon-gray);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 4px;
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-meta span {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+}
+
+.price-meta strong {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-light);
+    display: block;
+    margin-top: 5px;
+}
