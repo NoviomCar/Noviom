@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVIOM | Der Manufaktor</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Spezifische Erweiterungen für die Manufaktor-Seite */
+        .manufaktor-hero {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .manufaktor-hero h1 {
+            font-size: 32px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .manufaktor-hero p {
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .founders-section {
+            margin-top: 60px;
+        }
+
+        .founders-section h2 {
+            font-size: 22px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .founders-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .founder-card {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 25px;
+            transition: border-color 0.3s;
+        }
+
+        .founder-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .founder-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            background: #111; /* Fallback vor Bild-Upload */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 20px;
+        }
+
+        .founder-card h3 {
+            font-size: 18px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .founder-role {
+            color: var(--text-muted);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .info-contact-wrapper {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .info-block h3, .contact-block h3 {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .info-block p {
+            line-height: 1.7;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-details li {
+            margin-bottom: 15px;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .contact-details strong {
+            color: var(--text-light);
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .founders-grid, .info-contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .founder-img {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="logo.jfif" alt="NOVIOM">
+        </a>
+    </header>
+
+    <main class="detail-page">
+        <a href="index.html" class="back-btn">&larr; Zurück zur Kollektion</a>
+        
+        <div class="manufaktor-hero">
+            <h1>Der NOVIOM Manufaktor</h1>
+            <p>Wo technologische Perfektion auf traditionelle Handwerkskunst trifft. Jedes Fahrzeug, ist ein handgefertigtes Unikat, präzise abgestimmt auf die Träume und Ansprüche seines Besitzers.</p>
+        </div>
+
+        <section class="founders-section">
+            <h2>Die Gründer</h2>
+            <div class="founders-grid">
+                
+                <div class="founder-card">
+                    <img src="screenshot_2026-05-09_19-26-01.png" alt="Firmengründer" class="founder-img">
+                    <h3>Nico</h3>
+                    <span class="founder-role">Engineering & Fahrer</span>
+                </div>
+
+                <div class="founder-card">
+                    <img src="screenshot_2026-05-18_21-26-11.png" alt="Firmengründer" class="founder-img">
+                    <h3>Maxi</h3>
+                    <span class="founder-role">Design & Management</span>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="info-contact-wrapper">
+            
+            <div class="info-block">
+                <h3>Unsere Philosophie</h3>
+                <p>Gegründet aus der Leidenschaft für unverfälschte Fahrdynamik und dem unbändigen Willen, das technisch Machbare neu zu definieren. Bei NOVIOM fertigen wir Sportwagen und Rennmaschinen an. 
+                    Nicht für die Masse, sondern für den puristischen Enthusiasten. Jedes mechanische Bauteil wird bis aufs kleinste Detail perfektioniert.</p>
+                <p>Unsere hauseigene Entwicklungsabteilung nutzt modernste Materialien wie hochfesten AHS-Stahl und hochwertige Carbonteile , um ein optimales Leistungsgewicht zu erzielen 
+                    – getrieben von Motoren, die in der Automobilwelt ihresgleichen suchen.</p>
+            </div>
+
+            <div class="contact-block">
+                <h3>Kontakt</h3>
+                <ul class="contact-details">
+                    <li>
+                        <strong>E-Mail für Anfragen</strong>
+                        noviom.automation@gmail.com
+                    </li>
+                   
+                </ul>
+                
+                <a href="mailto:noviom.automation@gmail.com" class="btn-metal" style="display: block; text-align: center; margin-top: 30px;">
+                    Direkter Kontakt
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
